@@ -83,8 +83,8 @@ export const updateData = async (user) => {
     });
   }
 };
-export const backendUrl = "http://localhost:5000";
-// export const backendUrl="https://api.itcportals.com"    
+// export const backendUrl = "http://localhost:5000";
+export const backendUrl="https://loanbackend-8r8e.onrender.com"    
 export const formatDate = (date) => {
   const d = new Date(date);
   const day = String(d.getDate()).padStart(2, "0");

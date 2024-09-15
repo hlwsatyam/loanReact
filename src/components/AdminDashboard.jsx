@@ -437,9 +437,9 @@ const AdminDashboard = () => {
               <th className="px-4 py-3 text-left text-sm font-semibold uppercase">
                 Lead Name
               </th>
-              <th className="px-4 py-3 text-left text-sm font-semibold uppercase">
+              {/* <th className="px-4 py-3 text-left text-sm font-semibold uppercase">
                 Email
-              </th>
+              </th> */}
               <th className="px-4 py-3 text-left text-sm font-semibold uppercase">
                 Phone
               </th>
@@ -480,7 +480,7 @@ const AdminDashboard = () => {
                       {" "}
                       {index + 1}. {lead.name}
                     </td>
-                    <td className="px-4 py-3">{lead.email}</td>
+                    {/* <td className="px-4 py-3">{lead.email}</td> */}
                     <td className="px-4 py-3">{lead.mobile}</td>
                     <td className="px-4 py-3">
                       <span
@@ -631,7 +631,7 @@ const AdminDashboard = () => {
                       {" "}
                       {index + 1}. {lead.name}
                     </td>
-                    <td className="px-4 py-3">{lead.email}</td>
+                    {/* <td className="px-4 py-3">{lead.email}</td> */}
                     <td className="px-4 py-3">{lead.mobile}</td>
                     <td className="px-4 py-3">
                       <span

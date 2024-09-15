@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import govtLogo from "../../../public/fff.jpg";
-function LoanAgreement({ formData }) {
+function LoanAgreement({ formData,  }) {
   const [monthlyEMI, setMonthlyEMI] = useState(0);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ function LoanAgreement({ formData }) {
     return `${day}/${month}/${year}`;
   })();
   return (
-    <div className="bg-gray-100 p-8 font-sans text-gray-900">
+    <div   className="bg-gray-100 p-8 font-sans text-gray-900">
       <img src={govtLogo} className="m-auto rotate-[-0.4deg]  " />
 
       <h1 className="mb-6 text-center text-3xl font-bold">
@@ -327,8 +327,8 @@ function LoanAgreement({ formData }) {
               herein.
             </p>
           </div>
-          <div className="p-4">
-            <h3 className="text-lg font-medium text-gray-700">7.2. Default</h3>
+          <div className="p-4 mt-12">
+            <h3 className="text-lg font-medium text-gray-700 mt-8">7.2. Default</h3>
             <p className="text-gray-600">
               In case of default, the Lender may take legal action to recover
               the outstanding Loan Amount, including legal proceedings,
@@ -402,8 +402,8 @@ function LoanAgreement({ formData }) {
               electronically.
             </p>
           </div>
-          <div className="p-4">
-            <h3 className="text-lg font-medium text-gray-700">
+          <div className="p-4 mt-6">
+            <h3 className="text-lg font-medium mt-8 text-gray-700">
               9.3. Entire Agreement
             </h3>
             <p className="text-gray-600">
@@ -476,7 +476,7 @@ function LoanAgreement({ formData }) {
             </p>
           </div>
           <div className="p-4">
-            <h3 className="text-lg font-medium text-gray-700">
+            <h3 className="text-lg mt-12 font-medium text-gray-700">
               10.3. EMI Chart
             </h3>
             <p className="text-gray-600">

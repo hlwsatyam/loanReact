@@ -298,6 +298,7 @@ function EditCustomerDetailForm({
               label={"Pin Code"}
               placeholder={"Enter your Pinocde"}
               value={formData.pincode}
+              type="number"
               handleChange={handleChange}
             />
             {allPostOffices?.length > 0 && (
@@ -347,6 +348,7 @@ function EditCustomerDetailForm({
             />
             <InputLabelTab
               name={"exactLoanAmount"}
+              type="number"
               label={"Exact Loan Amount"}
               placeholder={"Enter your Exact Loan Amount"}
               value={formData.exactLoanAmount}
@@ -362,7 +364,22 @@ function EditCustomerDetailForm({
             />
             <InputSelect
               name={"rateOFintrest"}
-              options={["5", "6", "7", "8", "9", "10"]}
+              options={[
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16",
+                "17",
+                "18",
+              ]}
               label={"Selct Rate Of Intrest"}
               placeholder={"Enter your name"}
               value={formData.rateOFintrest}
@@ -393,6 +410,14 @@ function EditCustomerDetailForm({
                 "20",
                 "21",
                 "22",
+                "23",
+                "24",
+                "25",
+                "26",
+                "27",
+                "28",
+                "29",
+                "30",
               ]}
               label={"Selct Tenure [in Years] "}
               placeholder={"Enter your name"}
@@ -570,11 +595,10 @@ function EditCustomerDetailForm({
             </button>
           </form>
           <LoanCalculator
-          loanAmount={formData.exactLoanAmount}
-          tenure={formData.loanTenure}
-          interestRate={formData.loanTenure}
-        
-        />
+            loanAmount={formData.exactLoanAmount}
+            tenure={formData.loanTenure}
+            interestRate={formData.rateOFintrest}
+          />
         </div>
       </div>
     )

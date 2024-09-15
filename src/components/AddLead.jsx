@@ -9,6 +9,7 @@ import InputLabelTab from "./ui/InputLabelTab";
 import InputCheckBoxYesOrNo from "./ui/InputCheckBoxYesOrNo";
 import InputSelect from "./ui/InputSelect";
 import LoanCalculator from "./ui/LoanCalculator";
+import { useNavigate } from "react-router-dom";
 
 function EditCustomerDetailForm({
   fetchLead,
@@ -18,6 +19,7 @@ function EditCustomerDetailForm({
 
   setIsFormOpen,
 }) {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     image: null,
     nameTitle: null,
@@ -44,9 +46,9 @@ function EditCustomerDetailForm({
     "preferred_business_type_(select_one)": null,
     noOfEmploy: null,
     loanAmount: null,
-    loanTenure: null,
+    loanTenure: "1",
     loanType: null,
-    rateOFintrest: null,
+    rateOFintrest: "5",
     PriviousExperienceInFranchisee: null,
     researchedOtherFranchisee: null,
     estimatedInve4stmentCapacity: null,
@@ -61,9 +63,9 @@ function EditCustomerDetailForm({
 
   const [allPostOffices, setAllPostOffices] = useState([]);
 
-  useEffect(() => {
-    fetchData();
-  }, [id]);
+  // useEffect(() => {
+  //   fetchData();
+  // }, [id]);
 
   const fetchData = async () => {
     try {
@@ -80,6 +82,7 @@ function EditCustomerDetailForm({
         ...prev,
         ...data, // Assuming 'data' is an object with key-value pairs to be merged with 'formData'
       }));
+      navigate("/admin-dashboard");
     } catch (error) {
       console.error("Failed to fetch data:", error); // Log the error to console
     }
@@ -157,9 +160,8 @@ function EditCustomerDetailForm({
           progress: undefined,
           theme: "dark",
         });
-        setIsFormOpen(false);
-        if (isExcutiveMode) fetchLead(localStorage.getItem("excutiveLogged"));
-        if (isAdmin) fetchLead();
+
+        navigate("/admin-dashboard");
       } else {
         alert("Failed to submit form");
       }
@@ -179,12 +181,12 @@ function EditCustomerDetailForm({
       >
         <h2 className="relative mb-4 text-2xl font-bold text-green-400">
           Add Lead
-          <button
+          {/* <button
             onClick={() => setIsFormOpen(false)}
             className="hover: absolute right-0 font-bold text-white"
           >
             X
-          </button>
+          </button> */}
         </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* <div>
@@ -291,15 +293,16 @@ function EditCustomerDetailForm({
               value={formData.qualification}
               handleChange={handleChange}
             /> */}
-             <InputLabelTab
-              name={"address"}
-              label={"Address"}
-              placeholder={"Enter your Address"}
-              value={formData.address}
-              handleChange={handleChange}
-            />
+          <InputLabelTab
+            name={"address"}
+            label={"Address"}
+            placeholder={"Enter your Address"}
+            value={formData.address}
+            handleChange={handleChange}
+          />
           <InputLabelTab
             name={"pincode"}
+            type="number"
             label={"Pin Code"}
             placeholder={"Enter your Pinocde"}
             value={formData.pincode}
@@ -352,6 +355,7 @@ function EditCustomerDetailForm({
             /> */}
           <InputLabelTab
             name={"exactLoanAmount"}
+            type="number"
             label={"Exact Loan Amount"}
             placeholder={"Enter your Exact Loan Amount"}
             value={formData.exactLoanAmount}
@@ -367,7 +371,22 @@ function EditCustomerDetailForm({
           /> */}
           <InputSelect
             name={"rateOFintrest"}
-            options={["5", "6", "7", "8", "9", "10"]}
+            options={[
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+            ]}
             label={"Selct Rate Of Intrest"}
             placeholder={"Enter your name"}
             value={formData.rateOFintrest}
@@ -398,6 +417,14 @@ function EditCustomerDetailForm({
               "20",
               "21",
               "22",
+              "23",
+              "24",
+              "25",
+              "26",
+              "27",
+              "28",
+              "29",
+              "30",
             ]}
             label={"Selct Tenure [in Years] "}
             placeholder={"Enter your name"}
@@ -405,7 +432,6 @@ function EditCustomerDetailForm({
             handleChange={handleChange}
           />
 
-         
           {/* <InputSelect
               name={"area"}
               options={["Rural ग्रामीण ", "Urban शहरी"]}
@@ -571,8 +597,7 @@ function EditCustomerDetailForm({
         <LoanCalculator
           loanAmount={formData.exactLoanAmount}
           tenure={formData.loanTenure}
-          interestRate={formData.loanTenure}
-        
+          interestRate={formData.rateOFintrest}
         />
       </div>
     </div>

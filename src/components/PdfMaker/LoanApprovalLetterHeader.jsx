@@ -129,20 +129,21 @@ const LoanApprovalLetterHeader = ({
         tenure={loanTenure}
         interestRate={interestRate}
       />
-      <EmiTable
-        loanAmount={approvedAmount}
-        tenure={loanTenure}
-        interestRate={interestRate}
-      />
+     
       <LoanDetails monthlyEMI={monthlyEMI}
         approvedAmount={approvedAmount}
         interestRate={interestRate}
         loanTenure={loanTenure}
       />
-      <div className="mt-8 ">
+      <div className="mt-8 mb-4 ">
         <p className="text-lg text-white">Sincerely,</p>
         <p className="text-lg font-bold text-white">Bajaj Finance Limited</p>
       </div>
+      <EmiTable
+        loanAmount={approvedAmount}
+        tenure={loanTenure}
+        interestRate={interestRate}
+      />
     </div>
   );
 };

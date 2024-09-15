@@ -1,6 +1,6 @@
 import React from "react";
 
-function InputLabelTab({ placeholder,readOnly=false, label, value, handleChange, name }) {
+function InputLabelTab({ placeholder,readOnly=false,type="text", label, value, handleChange, name }) {
   return (
     <div>
       <label htmlFor="name" className="block text-sm font-medium text-gray-200">
@@ -9,6 +9,7 @@ function InputLabelTab({ placeholder,readOnly=false, label, value, handleChange,
       <input
         id="name"
         name={name}
+        type={type}
         readOnly={readOnly}
         value={value}
         onChange={handleChange}

@@ -27,7 +27,7 @@ const LoanApprovalLetter = ({
   interestRate,
 }) => {
   return (
-    <div className="mt-8 rounded-lg text-white">
+    <div className="mt-28 rounded-lg text-white">
       <section>
         <h2 className="mb-2 text-xl font-semibold">
           1. Understanding Your Loan:
@@ -216,7 +216,7 @@ const LoanApprovalLetter = ({
           understand these terms to ensure a clear and transparent financial
           relationship.
         </p>
-        <p>
+        <p className="mt-16" >
           <strong>Agreement Document:</strong> A copy of your loan agreement has
           been sent to you along with this approval letter. Please review it
           thoroughly and keep it for your records. If you have any questions or

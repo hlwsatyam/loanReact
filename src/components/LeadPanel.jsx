@@ -505,7 +505,7 @@ const LeadPanel = () => {
           <a href="/">
             <img
               className="mr-2 h-8 w-8 rounded-full object-cover"
-              src="https://www.itcdistributorships.in/images/logo.png"
+              src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
               alt="Logo"
             />
           </a>
